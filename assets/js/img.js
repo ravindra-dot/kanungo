@@ -4,113 +4,170 @@ let carouselInstance;
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    modalInstance = new bootstrap.Modal(document.getElementById("imageModal"));
-    carouselInstance = new bootstrap.Carousel(document.getElementById("galleryCarousel"), {
-        interval: false,
-        wrap: true
-    });
+    modalInstance = new bootstrap.Modal(
+        document.getElementById("imageModal")
+    );
+
+    carouselInstance = new bootstrap.Carousel(
+        document.getElementById("galleryCarousel"),
+        {
+            interval: false,
+            wrap: true
+        }
+    );
 
     fetch("imagedata.json")
         .then(res => res.json())
         .then(data => {
-            buildGallery(data);
+
+            // buildGallery(data);
             buildCarousel();
+
         });
 
 });
 
+
 /* ---------------------------
    BUILD GALLERY
 ---------------------------- */
-function buildGallery(data) {
 
-    const gallery = document.getElementById("gallery");
+// function buildGallery(data) {
 
-    Object.entries(data).forEach(([folder, imgs]) => {
+//     // const gallery = document.getElementById("gallery");
+//     const Independence_Day = document.getElementById("1");
+//     const Dusshera = document.getElementById("2");
+//     const Cricket_Tournament = document.getElementById("3");
+//     const Dahi_Handi = document.getElementById("4");
 
-        const section = document.createElement("div");
-        section.className = "mb-4 mb-md-5";
+//     Object.entries(data).forEach(([key, activity]) => {
 
-        section.innerHTML = `
-            <h5 class="mb-3">
-                <span class="badge bg-success-subtle text-success px-3 py-2">
-                    ${folder}
-                </span>
-            </h5>
-        `;
+//         const section = document.createElement("div");
+//         section.className = "mb-5";
 
-        const row = document.createElement("div");
+//         section.innerHTML = `
+//             <div class="mb-3 text-center">
 
-        // RESPONSIVE FIX (important)
-        row.className = "row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3";
+//                 <h3 class="fw-bold" id="${activity.title}">
+//                     ${activity.title}
+//                 </h3>
 
-        imgs.forEach(img => {
+//                 <p class="text-secondary">
+//                     ${activity.description}
+//                 </p>
 
-            const fullPath = `assets/images/${img}`;
-            const index = images.length;
+//             </div>
+//         `;
 
-            images.push(fullPath);
+//         const row = document.createElement("div");
+//         row.className = "row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3";
 
-            const col = document.createElement("div");
+//         activity.images.forEach(img => {
 
-            col.innerHTML = `
-                <div class="card border-0 shadow-sm h-100"
-                     role="button"
-                     onclick="openModal(${index})">
+//             const fullPath = `assets/images/${img}`;
 
-                    <img src="${fullPath}"
-                         class="img-fluid rounded"
-                         style="aspect-ratio: 1/1; object-fit: cover;"
-                         loading="lazy"
-                         alt="gallery">
+//             const index = images.length;
 
-                </div>
-            `;
+//             images.push({
+//                 src: fullPath,
+//                 title: activity.title,
+//                 description: activity.description
+//             });
 
-            row.appendChild(col);
-        });
+//             const col = document.createElement("div");
 
-        section.appendChild(row);
-        gallery.appendChild(section);
-    });
-}
+//             col.className = "col";
+
+//             col.innerHTML = `
+//                 <div class="card border-0 shadow-sm h-100"
+//                      role="button"
+//                      onclick="openModal(${index})">
+
+//                     <img src="${fullPath}"
+//                          class="img-fluid rounded"
+//                          loading="lazy"
+//                          style="aspect-ratio:1/1;object-fit:cover;">
+
+//                 </div>
+//             `;
+
+//             row.appendChild(col);
+
+//         });
+
+//         section.appendChild(row);
+
+//         // gallery.appendChild(section);
+//         if (key ==="15-august"){
+//             Independence_Day.append(section);
+//         }
+//         else if(key ==="Dusshera"){
+//             Dusshera.append(section);
+//         }
+//         else if(key ==="Cricket-Tournament"){
+//             Cricket_Tournament.append(section);
+//         }
+//         else if(key ==="DAHI-HANDI"){
+//             Dahi_Handi.append(section);
+//         };
+
+//     });
+
+// }
+
 
 /* ---------------------------
    BUILD CAROUSEL
 ---------------------------- */
+
 function buildCarousel() {
 
     const inner = document.getElementById("carouselInner");
+
     inner.innerHTML = "";
 
-    images.forEach((src, i) => {
+    images.forEach((image, i) => {
 
         const item = document.createElement("div");
-        item.className = "carousel-item" + (i === 0 ? " active" : "");
+
+        item.className =
+            "carousel-item" + (i === 0 ? " active" : "");
 
         item.innerHTML = `
-            <div class="d-flex justify-content-center align-items-center bg-dark"
-                 style="height:80vh;">
 
-                <img src="${src}"
-                     class="img-fluid"
-                     style="max-height:75vh; object-fit:contain;"
-                     alt="preview">
+        <div class="d-flex flex-column justify-content-center align-items-center bg-dark"
+             style="height:80vh;">
 
+            <img src="${image.src}"
+                 class="img-fluid"
+                 style="max-height:70vh;object-fit:contain;"
+                 alt="${image.title}">
+
+            <div class="text-center text-white mt-3 px-3">
+                <h4>${image.title}</h4>
             </div>
+        </div>
         `;
 
         inner.appendChild(item);
+
     });
+
 }
+
 
 /* ---------------------------
    OPEN MODAL
 ---------------------------- */
+
 function openModal(index) {
+
     modalInstance.show();
 
     setTimeout(() => {
+
         carouselInstance.to(index);
+
     }, 120);
+
 }

@@ -3,11 +3,49 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Contact | Kanungo Janseva Sanstha</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact | Kanungo Janseva Sanstha | Social Welfare & Charitable Trust</title>
+
+    <meta name="title" content="Kanungo Janseva Sanstha | Social Welfare & Charitable Trust">
+    <meta name="description"
+        content="Kanungo Janseva Sanstha is a registered charitable trust dedicated to social welfare, supporting old age homes, orphanages, education, healthcare, environmental initiatives, and community development across India.">
+
+    <meta name="keywords"
+        content="Kanungo Janseva Sanstha, NGO, Charitable Trust, Social Welfare, Old Age Home, Orphanage, Education, Healthcare, Donation, Volunteer, Community Service, India">
+
+    <meta name="author" content="Kanungo Janseva Sanstha">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#198754">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://kanungojansevasanstha.com/">
+
+    <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kanungo Janseva Sanstha">
+    <meta property="og:description"
+        content="Together for a Better Tomorrow. Join Kanungo Janseva Sanstha in supporting education, healthcare, old age homes, orphanages, and community welfare initiatives.">
+    <meta property="og:image" content="https://kanungojansevasanstha.com/assets/images/og-image.png">
+    <meta property="og:url" content="https://kanungojansevasanstha.com/">
+    <meta property="og:site_name" content="Kanungo Janseva Sanstha">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kanungo Janseva Sanstha">
+    <meta name="twitter:description"
+        content="A registered charitable trust working towards education, healthcare, social welfare, and community development.">
+    <meta name="twitter:image" content="https://kanungojansevasanstha.com/assets/images/og-image.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/favicons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="assets/favicons/apple-touch-icon.png">
 
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
     <!-- Google Fonts -->
@@ -78,21 +116,21 @@
 
                     <h3 class="fw-bold mb-4">Send a Message</h3>
 
-                    <form class="bg-white p-4 rounded-4 shadow-sm">
+                    <form class="bg-white p-4 rounded-4 shadow-sm" action="mail.php" method="POST">
 
                         <div class="mb-3">
                             <label class="form-label">Full Name</label>
-                            <input type="text" class="form-control" placeholder="Your name">
+                            <input type="text" name="name" class="form-control" placeholder="Your name" required>
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label">Email</label>
-                            <input type="email" class="form-control" placeholder="you@example.com">
+                            <input type="email" name="email" class="form-control" placeholder="you@example.com" required>
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label">Message</label>
-                            <textarea class="form-control" rows="4" placeholder="Write your message..."></textarea>
+                            <textarea class="form-control" name="message" rows="4" placeholder="Write your message..." required></textarea>
                         </div>
 
                         <button type="submit" class="btn btn-success w-100 rounded-pill">
@@ -117,7 +155,9 @@
 
                         <p class="mb-3">
                             <i class="bi bi-telephone-fill text-success me-2"></i>
-                            +91 00000 00000
+                            +91 7387174071<p class="mb-2">
+                            <i class="bi bi-telephone-fill text-success me-2"></i>
+                            +91 8317252920</p><p class="mb-2">
                         </p>
 
                         <p class="mb-3">
@@ -149,7 +189,7 @@
     <!-- WHATSAPP CTA -->
     <section class="py-4 bg-white text-center">
         <div class="container">
-            <a href="https://wa.me/910000000000" class="btn btn-success rounded-pill px-4">
+            <a href="https://wa.me/917387174071" class="btn btn-success rounded-pill px-4">
                 <i class="bi bi-whatsapp me-2"></i>
                 Chat on WhatsApp
             </a>
@@ -164,7 +204,130 @@
             <a href="#" class="btn btn-light rounded-pill px-4">Donate Now</a>
         </div>
     </section>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- footer -->
+    <footer class="py-5 bg-dark text-white pt-5 pb-3 ">
+        <div class="container">
+            <div class="row gy-4">
+                <!-- About -->
+                <div class="col-lg-4">
+                    <img src="assets/images/logo.png"
+                        alt="Logo"
+                        height="70"
+                        class="mb-3">
+                    <h5 class="fw-bold">
+                        Kanungo Janseva Sanstha
+                    </h5>
+                    <p class="text-white-50">
+                        Dedicated to serving humanity through social welfare,
+                        youth empowerment, sports, and community development.
+                    </p>
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="#" class="text-white fs-5">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="#" class="text-white fs-5">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="#" class="text-white fs-5">
+                            <i class="bi bi-youtube"></i>
+                        </a>
+                        <a href="#" class="text-white fs-5">
+                            <i class="bi bi-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Quick Links -->
+                <div class="col-md-4 col-lg-2">
+                    <h5 class="fw-bold mb-3">
+                        Quick Links
+                    </h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-white-50 text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="about-us.html" class="text-white-50 text-decoration-none">About Us</a></li>
+                        <li class="mb-2"><a href="index.html#activities" class="text-white-50 text-decoration-none">Activities</a></li>
+                        <li class="mb-2"><a href="index.html#leadership" class="text-white-50 text-decoration-none">Leadership</a></li>
+                        <li><a href="contact-us.html" class="text-white-50 text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <!-- Activities -->
+                <div class="col-md-4 col-lg-3">
+                    <h5 class="fw-bold mb-3">
+                        Our Activities
+                    </h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">Old Age Home Support</li>
+                        <li class="mb-2">Orphanage Support</li>
+                        <li class="mb-2">Cricket Tournament</li>
+                        <li class="mb-2">Govinda Pathak</li>
+                        <li>Community Welfare</li>
+                    </ul>
+                </div>
+                <!-- Contact -->
+                <div class="col-md-4 col-lg-3">
+                    <h5 class="fw-bold mb-3">
+                        Contact
+                    </h5>
+                    <p class="mb-2">
+                        <i class="bi bi-geo-alt-fill me-2"></i>
+                        Kanungo Vihar , Servey No - 62 (old), New Survey No - 75, Alkapuri Road , Raj  Nagar, Nallasopara East, Maharashtra
+                    </p>
+
+                    <p class="mb-2">
+                        <i class="bi bi-telephone-fill me-2"></i>
+                        +91 7387174071<p class="mb-2">
+                        <i class="bi bi-telephone-fill me-2"></i>
+                        +91 8317252920</p><p class="mb-2">
+                        <i class="bi bi-telephone-fill me-2"></i>
+                        +91 9284387449</p><p class="mb-2">
+                        <i class="bi bi-telephone-fill me-2"></i>
+                        +91 8317252920</p>
+                    </p>
+
+                    <p class="mb-3">
+                        <i class="bi bi-envelope-fill me-2"></i>
+                        contact@kanungojansevasanstha.com
+                    </p>
+
+                    <span class="badge bg-success">
+                        Reg. No. PALGHAR/0000343/2026
+                    </span>
+
+                </div>
+
+            </div>
+
+            <hr class="border-secondary my-4">
+
+            <div class="row">
+
+                <div class="col-md-6 text-center text-md-start">
+
+                    <small class="text-white-50">
+                        © 2026 Kanungo Janseva Sanstha. All Rights Reserved.
+                    </small>
+
+                </div>
+
+                <div class="col-md-6 text-center text-md-end mt-2 mt-md-0">
+
+                    <small class="text-white-50">
+                        Designed & Developed by
+                        <span class="fw-semibold">
+                            <a href="https://r7softservices.com/" target="_blank" class="text-decoration-none text-white">
+                                R7 Soft Services
+                            </a>
+                        </span>
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

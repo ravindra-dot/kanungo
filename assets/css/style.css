@@ -38,6 +38,11 @@ h6 {
 .navbar-hidden {
     transform: translateY(-100%);
 }
+.navbar,
+.navbar .container,
+.navbar-collapse {
+    overflow-x: hidden;
+}
 
 .hero-slide {
     min-height: 85vh;
