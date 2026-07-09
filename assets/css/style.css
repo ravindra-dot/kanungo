@@ -27,8 +27,9 @@ h6 {
 }
 
 .nav-link:hover,
-.nav-link.active {
+.nav-link.actives {
     color: #0B5D4A;
+    font-weight: bold;
 }
 
 #mainNavbar {
