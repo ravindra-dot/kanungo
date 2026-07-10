@@ -1,32 +1,39 @@
 let images = [];
 let modalInstance;
 let carouselInstance;
+function prepareImages(data) {
+  images = [];
+
+  Object.values(data).forEach((activity) => {
+    activity.images.forEach((img) => {
+      images.push({
+        src: `assets/images/${img}`,
+        title: activity.title,
+        description: activity.description,
+      });
+    });
+  });
+}
 
 document.addEventListener("DOMContentLoaded", () => {
+  modalInstance = new bootstrap.Modal(document.getElementById("imageModal"));
 
-    modalInstance = new bootstrap.Modal(
-        document.getElementById("imageModal")
-    );
+  carouselInstance = new bootstrap.Carousel(
+    document.getElementById("galleryCarousel"),
+    {
+      interval: false,
+      wrap: true,
+    },
+  );
 
-    carouselInstance = new bootstrap.Carousel(
-        document.getElementById("galleryCarousel"),
-        {
-            interval: false,
-            wrap: true
-        }
-    );
-
-    fetch("imagedata.json")
-        .then(res => res.json())
-        .then(data => {
-
-            // buildGallery(data);
-            buildCarousel();
-
-        });
-
+  fetch("imagedata.json")
+    .then((res) => res.json())
+    .then((data) => {
+      // buildGallery(data);
+      prepareImages(data);
+      buildCarousel();
+    });
 });
-
 
 /* ---------------------------
    BUILD GALLERY
@@ -115,25 +122,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // }
 
-
 /* ---------------------------
    BUILD CAROUSEL
 ---------------------------- */
 
 function buildCarousel() {
+  const inner = document.getElementById("carouselInner");
 
-    const inner = document.getElementById("carouselInner");
+  inner.innerHTML = "";
 
-    inner.innerHTML = "";
+  images.forEach((image, i) => {
+    const item = document.createElement("div");
 
-    images.forEach((image, i) => {
+    item.className = "carousel-item" + (i === 0 ? " active" : "");
 
-        const item = document.createElement("div");
-
-        item.className =
-            "carousel-item" + (i === 0 ? " active" : "");
-
-        item.innerHTML = `
+    item.innerHTML = `
 
         <div class="d-flex flex-column justify-content-center align-items-center bg-dark"
              style="height:80vh;">
@@ -149,25 +152,18 @@ function buildCarousel() {
         </div>
         `;
 
-        inner.appendChild(item);
-
-    });
-
+    inner.appendChild(item);
+  });
 }
-
 
 /* ---------------------------
    OPEN MODAL
 ---------------------------- */
 
 function openModal(index) {
+  modalInstance.show();
 
-    modalInstance.show();
-
-    setTimeout(() => {
-
-        carouselInstance.to(index);
-
-    }, 120);
-
+  setTimeout(() => {
+    carouselInstance.to(index);
+  }, 120);
 }

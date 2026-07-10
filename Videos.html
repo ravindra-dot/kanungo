@@ -49,7 +49,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -87,7 +89,7 @@
                         <a class="nav-link fw-medium" href="contact-us.html">Contact</a>
                     </li>
                     <li class="nav-item">
-                       <a class="nav-link fw-medium text-success" href="donation.html">
+                        <a class="nav-link fw-medium text-success" href="donation.html">
                             <i class="bi bi-heart-fill text-success"></i>
                             Donate us
                         </a>
@@ -111,16 +113,123 @@
             <p class="mb-0">Explore Events Videos Here...</p>
         </div>
     </section>
+    <!-- Video Gallery -->
+    <section class="py-5 bg-light" id="videos">
+        <div class="container">
 
-    <!-- INTRO -->
-    <section class="py-5">
-        <div class="container text-center">
-            <h2 class="fw-bold mb-3">Videos and Movements</h2>
-            <p class="text-muted col-lg-8 mx-auto">
-               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus, quae sint, ipsum ipsa dicta cum maiores, labore voluptas nesciunt ratione aut officiis autem consectetur earum iure cumque mollitia! Quis, veritatis!
-            </p>
+            <div class="text-center mb-5">
+                <span class="badge bg-success-subtle text-success px-3 py-2 mb-3">
+                    OUR VIDEOS
+                </span>
+                <h2 class="display-5 fw-bold">Videos & Highlights</h2>
+                <p class="text-secondary">
+                    Watch our events, awareness campaigns and community activities.
+                </p>
+            </div>
+
+            <div class="row g-4">
+
+                <!-- Video Card -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card border-0 shadow-sm video-card" data-video="assets/images/15-august/15-august.mp4">
+
+                        <div class="position-relative">
+
+                            <img src="assets/images/15-august/15-august2.jpeg" class="card-img-top h-50"
+                                alt="Video Thumbnail">
+
+                            <div class="play-btn">
+                                <i class="bi bi-play-fill"></i>
+                            </div>
+
+                        </div>
+
+                        <div class="card-body">
+                            <h5 class="fw-bold">Independence Day Celebration</h5>
+                            <p class="text-secondary mb-0">
+                                Community members celebrating India's independence with supplies distribution.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- Video Card -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card border-0 shadow-sm video-card" data-video="assets/images/DAHI-HANDI/dahi-handi.mp4">
+
+                        <div class="position-relative">
+
+                            <img src="assets/images/DAHI-HANDI/Dahi-Handi1.jpeg" class="card-img-top h-50"
+                                alt="Video Thumbnail">
+
+                            <div class="play-btn">
+                                <i class="bi bi-play-fill"></i>
+                            </div>
+
+                        </div>
+
+                        <div class="card-body">
+                            <h5 class="fw-bold">Dahi Handi Celebration</h5>
+                            <p class="text-secondary mb-0">
+                                Community members celebrating the traditional Dahi Handi event.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- Video Card -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card border-0 shadow-sm video-card" data-video="assets/images/Cricket-Tournament/cricket.mp4">
+
+                        <div class="position-relative">
+
+                            <img src="assets/images/Cricket-Tournament/Cricket-Tournament13.jpeg" class="card-img-top h-50" alt="Video Thumbnail">
+
+                            <div class="play-btn">
+                                <i class="bi bi-play-fill"></i>
+                            </div>
+
+                        </div>
+
+                        <div class="card-body">
+                            <h5 class="fw-bold">Cricket Tournament</h5>
+                            <p class="text-secondary mb-0">
+                                Community members participating in the annual cricket tournament.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
         </div>
     </section>
+    <div class="modal fade" id="videoModal">
+
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+
+            <div class="modal-content">
+
+                <button class="btn-close" data-bs-dismiss="modal">
+                </button>
+
+                <video id="modalVideo" controls autoplay>
+                </video>
+
+                <div class="video-info">
+
+                    <h4 id="videoTitle"></h4>
+
+                    <p id="videoDescription"></p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 
     <!-- CTA -->
     <section class="py-5 bg-success text-white text-center">
@@ -257,6 +366,8 @@
 
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/videos.js"></script>
 </body>
+
 
 </html>
